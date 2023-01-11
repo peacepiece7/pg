@@ -1,0 +1,11 @@
+<div>1</div>
+<script>
+  const el1 = document.getElementsByTagName('div')
+  const el2 = document.querySelectorAll("div")
+  console.log(el1.length) // 1
+  console.log(el2.length) // 1
+
+  document.body.append(document.createElement('div'))
+  console.log(el1.length) // 2
+  console.log(el2.length) // 1
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  안녕하세요
+  <!-- if isAdmin -->
+  <div>관리자로 로그인 하였습니다.</div>
+  <!-- /if -->
+  <!-- if user -->
+  <div>사용자로 로그인 하였습니다.</div>
+  <!-- /if -->
+</body>
+<script>
+  const text = document.body.firstChild
+  console.log(text.data) // 
+  const comment = text.nextSibling
+  console.log(comment.data) // if isAdmin
+  if (comment.data.includes('isAdmin')) {
+    console.log("관리자 관련 정보 제공..? 이렇게 짜면 엄청 위험하겠다..")
+  }
+</script>
+
+</html>

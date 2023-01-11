@@ -1,0 +1,38 @@
+<div id="menu">
+  <button data-action="save">저장하기</button>
+  <button data-action="load">불러오기</button>
+  <button data-action="search">검색하기</button>
+</div>
+
+<script>
+
+  // function Handler(menu) {
+  //   this.onclick = (e) => {
+  //     console.log(e)
+  //   }
+  //   //  menu.onclick = (e) => console.log(e)
+  //   menu.onclick = this.onclick.bind(this) // 명시적
+  //   menu.onclick = this.onclick
+  //   return this
+  // }
+  // // const handleMenu = new Handler(menu)
+
+  class Menu {
+    constructor(elem) {
+      this._elem = elem
+      elem.onclick = this.onClick.bind(this) // this.onClick이 암시적으로 명시되어있을 경우 Menu의 this를 명시적으로으로 바인딩함
+    }
+    onClick(e) {
+      e.target.dataset.action && this[e.target.dataset.action]()
+    }
+    save() {
+      console.log('start save')
+    }
+    load() {
+      console.log('start load')
+    }
+    search() {
+      console.log('start search')
+    }
+  }
+</script>

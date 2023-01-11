@@ -1,0 +1,13 @@
+<input>
+<script>
+  let input = document.querySelector('input');
+
+  // 속성 추가 => 프로퍼티 갱신
+  input.setAttribute('value', 'text');
+  console.log(input.value); // text (갱신)
+
+  // 프로퍼티를 변경해도 속성이 갱신되지 않음
+  input.value = 'newValue2';
+  console.log(input.value) // newValue2
+  console.log(input.getAttribute('value')); // text (갱신 안됨!)
+</script>
