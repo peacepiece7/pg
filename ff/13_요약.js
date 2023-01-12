@@ -20,24 +20,26 @@ const filter = (list, predicate) => {
 }
 const bvalue = (key) => (list) => list[key]
 
-// 1.
+// age를 구하는 방법
+
+// 1. filter -> map => 커링
 const ages = map(
   filter(users, (user) => user.age < 30),
   bvalue('age')
 )
 // console.log(ages)
 
-// 2.
+// 2. 고차함수 + map ->  filter
 const bvalues = (key) => (list) => map(list, (v) => v[key])
 const keyedValues = bvalues('age')
 const ages2 = filter(keyedValues(users), (age) => age < 30)
 // console.log(ages2)
 
-// 3.
+// 3. 커스텀 filter -> map => 커링
 const under_30 = (u) => u.age < 30
 const ages3 = map(filter(users, under_30), bvalue('age'))
 // console.log(ages3)
 
-// 4.
+// 4. 커링 + 커스텀 필터
 const ages4 = bvalues('age')(filter(users, under_30))
 console.log(ages4)

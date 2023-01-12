@@ -1,3 +1,4 @@
+// 프로퍼티가 숨겨져 있다면 유용하지 못함
 const users = [
   { name: 'foo', age: 36 },
   { name: 'bar', age: 21 },

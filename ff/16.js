@@ -1,3 +1,5 @@
+// 프로퍼티가 숨겨져 있을 경우, 콜백으로 처리
+
 function User(id, name, age) {
   this.id = id
   this.name = name
